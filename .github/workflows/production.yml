@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Farm Production Deployment
+name: Farmart Production Deployment
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
