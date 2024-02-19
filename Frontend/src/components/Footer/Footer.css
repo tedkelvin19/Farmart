@@ -1,0 +1,10 @@
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-socials a {
+  margin-left: 20px;
+  color: azure;
+}
