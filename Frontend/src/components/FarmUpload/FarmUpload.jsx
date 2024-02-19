@@ -12,7 +12,10 @@ const FarmUpload = () => {
       <div id='header'>
       <h1>My Buy List</h1>
     </div>
-
+    </div>
+      <div id='total-price'>
+        <h3>Total Payable: 6,900</h3>
+      </div>
   )
 }
 
