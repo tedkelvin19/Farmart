@@ -1,0 +1,11 @@
+#container{
+  
+  display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+  background-image: url(https://th.bing.com/th/id/R.def6ab434304df7df40fe5fc0e5d2ab4?rik=3CLDKqANwpsPTA&pid=ImgRaw&r=0);
+background-repeat: no-repeat;
+background-size: cover;
+height: 1000px;
+margin: 0;
+padding: 0;
+}
