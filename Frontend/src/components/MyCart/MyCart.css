@@ -9,3 +9,173 @@ height: 1000px;
 margin: 0;
 padding: 0;
 }
+
+#product-list{
+  padding: 10px;
+  width: 780px;
+  border-style: solid;
+  height: 130px;
+  margin: 15px;
+  margin-top: 20px;
+  display: block;
+  border-radius: 5px;
+  
+}
+
+#main{
+ display: inline-block;
+  align-items: center;
+  
+ border-style: solid;
+ border-color: white;
+ height: 70%;
+ margin-left: 250px;
+ margin-top: 25px;
+ background-color: white;
+ border-radius: 5px;
+}
+
+h1{
+  display: inline-block;
+
+}
+
+#total-price{
+  display: inline-block;
+  margin-left: 445px;
+  border-style: solid;
+  border-radius: 4px;
+  background-color: grey;
+  color: white;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#header{
+  display: inline-block;
+  margin-left: 20px;
+  color: orange;
+}
+
+
+#image-block{
+  
+  display: inline-block;
+  width: 150px;
+  position: absolute;
+  top: 268px;
+  left: 269px;
+}
+#product-img{
+  width: 100%;
+  height: 152px;
+  
+}
+
+#image-block-2{
+  width: 150px;
+  position: absolute;
+  top: 441px;
+  display: inline-block;
+  left: 269px;
+}
+
+#image-block-3{
+  width: 150px;
+  position: absolute;
+  top: 615px;
+  display: inline-block;
+  left: 269px;
+}
+
+#place-order{
+  background-color: orange;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 350px;
+  cursor: pointer;
+  font-size:16px;
+}
+
+#product-definition{
+  display: inline-block;
+  /* border-style: solid; */
+  position: absolute;
+  left: 300px;
+  margin: 10px;
+}
+
+#product-definition-3{
+  display: inline-block;
+  /* border-style: solid; */
+  position: absolute;
+  left: 580px;
+
+}
+
+#product-definition p{
+  font-size: 18px;
+}
+
+#product-definition-3{
+  font-size: 18px;
+}
+
+#remove-from-list{
+  display: inline-block;
+  position: absolute;
+  left: 930px;
+  top: 290px;
+}
+
+#remove-from-list button{
+  padding: 8px;
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+#remove-from-list-3{
+  display: inline-block;
+  position: absolute;
+  left: 930px;
+  top: 640px;
+}
+
+#remove-from-list-2{
+  display: inline-block;
+  position: absolute;
+  left: 663px;
+  top: 20px;
+}
+
+#remove-from-list-3 button{
+  padding: 8px;
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  
+}
+
+#remove-from-list-2 button{
+  padding: 8px;
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  width: 117px;
+}
+
+#heat-header{
+  padding: 15px;
+  min-height: 100px;
+  border-style: solid;
+  background-color: black;
+}
