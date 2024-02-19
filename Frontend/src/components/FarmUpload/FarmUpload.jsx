@@ -2,8 +2,8 @@ import React from 'react'
 import Header from 'src/components/Header/Header.jsx'
 const FarmUpload = () => {
   return (
-    <div>
-    <Header />
+    <div id='heat'>
+     <Header />
     <div id='container'>
       
       
@@ -11,12 +11,11 @@ const FarmUpload = () => {
     <div id='main'>
       <div id='header'>
       <h1>My Buy List</h1>
-    </div>
-    </div>
+      </div>
       <div id='total-price'>
         <h3>Total Payable: 6,900</h3>
       </div>
-      <div id='product-list'>
+<div id='product-list'>
   <div id='image-block'>
   <img id='product-img' src='https://th.bing.com/th/id/OIP.jNrm4XKi51vHf1D-yAjB0QHaHa?w=1440&h=1440&rs=1&pid=ImgDetMain' alt='product img'></img>
   <div id='product-definition'>
