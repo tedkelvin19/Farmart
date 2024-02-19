@@ -3,6 +3,7 @@ import Header from 'src/components/Header/Header.jsx'
 const FarmUpload = () => {
   return (
     <div>
+      <Header />
       
     </div>
   )
