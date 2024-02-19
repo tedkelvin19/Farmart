@@ -4,7 +4,13 @@ const FarmUpload = () => {
   return (
     <div>
     <Header />
-    
+    <div id='container'>
+      
+      
+      
+    <div id='main'>
+      <div id='header'>
+      <h1>My Buy List</h1>
     </div>
 
   )
