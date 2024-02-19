@@ -4,8 +4,6 @@ import Header from 'src/components/Header/Header.jsx'
 const FarmUpload = () => {
   return (
     <div>
-      <Header />
-      <div>
     
     <div id = 'main'>
 
@@ -28,6 +26,7 @@ const FarmUpload = () => {
 <option value="Hampshire">Hampshire Pigs</option>
 <option value="Leghorn">Leghorn Chickens</option>
 </select>
+  
 <div id='input-section'>
 <ul className = 'no-bullets'>
 <li><input id = 'boxes' type ='text' placeholder = 'Breed'></input></li>
@@ -48,8 +47,7 @@ const FarmUpload = () => {
 </div>
 </div>
 </div>
-
   )
-  }
+}
 
 export default FarmUpload
