@@ -1,9 +1,12 @@
 import React from 'react'
-
+import Header from 'src/components/Header/Header.jsx'
 const FarmUpload = () => {
   return (
-    <div>Farmer can view/upload/edit new animal here</div>
+    <div>
+    <Header />
     
+    </div>
+
   )
 }
 
