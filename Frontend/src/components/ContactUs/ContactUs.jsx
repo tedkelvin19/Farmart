@@ -17,13 +17,21 @@ const ContactUs = () => {
         <div className="row mt-5 ">
           <div className="col-md-6">
             <h3>Office Address</h3>
-            <p><i class="bi bi-building"></i> Block 001 - Farmart Ranch</p>
-            <p><i class="bi bi-door-open"></i> Open All week 8am - 5pm</p>
+            <p>
+              <i class="bi bi-building"></i> Block 001 - Farmart Ranch
+            </p>
+            <p>
+              <i class="bi bi-door-open"></i> Open All week 8am - 5pm
+            </p>
           </div>
           <div className="col-md-6">
             <h3>Talk To Us</h3>
-            <p><i class="bi bi-envelope"></i> info@farmart.co.ke</p>
-            <p><i class="bi bi-telephone-inbound"></i>+ 123 123 456 789</p>
+            <p>
+              <i class="bi bi-envelope"></i> info@farmart.co.ke
+            </p>
+            <p>
+              <i class="bi bi-telephone-inbound"></i>+ 123 123 456 789
+            </p>
           </div>
         </div>
         <div className="row mt-5">
@@ -61,9 +69,10 @@ const ContactUs = () => {
                 <button
                   type="submit"
                   className="btn btn-primary mt-4 sign-button"
-                >Send</button>
+                >
+                  Send
+                </button>
               </div>
-              
             </form>
           </div>
         </div>

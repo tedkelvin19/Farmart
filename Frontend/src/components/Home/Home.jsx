@@ -46,13 +46,23 @@ const Home = () => {
         </p>
         <p>Sign In To Buy or Sell</p>
 
-        <Link to="/sign-in">
-          <button className="sign-in-btn">Sign In</button>
-        </Link>
+        <div>
+          <Link to="/sign-in">
+            <button className="sign-in-btn mx-4">Sign In</button>
+          </Link>
+          <Link to="/sign-up">
+            <button className="sign-in-btn mx-4">Sign Up</button>
+          </Link>
+        </div>
+        <div className="dev-links mt-5">
+          <Link to="/animal-list">Animal List</Link>
+          <Link to="/farm-upload">Upload animal</Link>
+          <Link to="/my-cart">My Cart</Link>
+        </div>
       </div>
 
       <div className="container mt-5">
-        <h2 className="mb-4 heading-2">Our Market Today</h2>
+        <h2 className="mb-4 heading-2">Samples From Our Market</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
           {marketData.map((animal, index) => (
             <div key={index} className="col">
@@ -61,26 +71,22 @@ const Home = () => {
                   <img
                     className="card-img card-img-top img-fluid"
                     src={animal.image}
-                    alt={animal.title}
+                    alt={animal.category}
                   />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    <strong>{animal.title}</strong>
+                    <strong>{animal.category}</strong>
                   </h5>
                   <p className="card-text">
-                    <strong>Farmer:</strong> {animal.owner}
+                    <strong>Breed:</strong> {animal.breed}
                   </p>
                   <p className="card-text">
-                    <strong>Contact:</strong> {animal.contact}
+                    <strong>Productivity: </strong>{animal.productivity}
                   </p>
                   <p className="card-text">
-                    <strong>Location: </strong>
-                    {animal.location}
+                    <strong>Cost: </strong>Ksh {animal.cost}
                   </p>
-                  <a href="#" className="card-link">
-                    More details
-                  </a>
                 </div>
               </div>
             </div>

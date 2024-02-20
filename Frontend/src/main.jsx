@@ -25,6 +25,8 @@ const router = createBrowserRouter([
   { path: "/check-out", element: <CheckOut /> },
   { path: "/about-us", element: <AboutUs /> },
   { path: "/contact-us", element: <ContactUs /> },
+  { path: "/farm-upload", element: <FarmUpload /> },
+  { path: "/my-cart", element: <MyCart /> }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

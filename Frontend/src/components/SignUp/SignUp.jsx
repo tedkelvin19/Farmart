@@ -1,5 +1,5 @@
 import "./SignUp.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const SignUp = () => {
-  const [id, setId] = useState("");
+  // const [id, setId] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +36,7 @@ const SignUp = () => {
       let endpoint;
       if (role === "Farmer") {
         endpoint = "https://farm-jqcq.onrender.com/farm/farmers/";
-      } else endpoint = " https://farm-jqcq.onrender.com/farm/customers/";
+      } else endpoint = "https://farm-jqcq.onrender.com/farm/customers/";
 
       const response = await axios.post(endpoint, user);
 
@@ -56,7 +56,7 @@ const SignUp = () => {
     if (isSignedUp) {
       setTimeout(() => {
         Navigate("/sign-in");
-      }, 500);
+      }, 50);
     }
   }, [isSignedUp]);
 

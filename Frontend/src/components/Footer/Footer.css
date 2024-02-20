@@ -1,10 +1,20 @@
+/* Footer.css */
 .footer-wrapper {
-  position: absolute;
+  width: 100%;
+  position: fixed;
   bottom: 0;
+}
+
+.footer {
   width: 100%;
 }
 
+.footer-socials {
+  display: flex; 
+  justify-content: center; 
+}
+
 .footer-socials a {
-  margin-left: 20px;
+  margin: 0 10px;
   color: azure;
 }

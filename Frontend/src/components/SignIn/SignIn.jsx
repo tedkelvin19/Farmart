@@ -1,39 +1,90 @@
-import React from "react";
 import "./SignIn.css";
-import { Link } from "react-router-dom";
+import axios from "axios";
+
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const SignIn = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const Navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      let user = {
+        username,
+        password,
+        role,
+      };
+
+      let endpoint;
+      if (role == "User") {
+        endpoint = "https://farm-jqcq.onrender.com/farm/customers/";
+      } else endpoint = "https://farm-jqcq.onrender.com/farm/farmers/";
+
+      Response = axios.post(endpoint, user);
+      if (Response.status === "200") {
+        console.log("Sign in successful");
+        setIsSignedIn(true);
+
+        if (role === "User") {
+          Navigate("/animal-list");
+        } else {
+          Navigate("/farm-upload");
+        }
+      } else {
+        alert("Problem signing in");
+      }
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
+  };
+
   return (
     <>
       <Header />
       <div className="container d-flex justify-content-center align-items-center vh-90 sign-in-form">
         <div className="container card mt-5 mb-5">
           <h2 className="text-center mt-3">Sign In</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <input
                 type="text"
+                required
                 className="form-control"
                 id="username"
                 placeholder="Enter username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="form-group mt-4">
               <label htmlFor="password">Password</label>
               <input
                 type="password"
+                required
                 className="form-control"
                 id="password"
                 placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-group mt-4">
               <label htmlFor="role">Your Role</label>
-              <select className="form-control" id="role">
+              <select
+                className="form-control"
+                id="role"
+                required
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+              >
                 <option>Buyer</option>
                 <option>Farmer</option>
               </select>
