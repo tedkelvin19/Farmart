@@ -3,12 +3,15 @@ import React from 'react'
 const productDetail = () => {
   return (
     <div>
-       <div id='body'> 
+      
+    <div id='body'> 
       <div id='header'>
         <h1>Animal Details</h1>
         </div>
-      <div id='main'></div>
-      <div id='image-block'>
+      <div id='main'>
+        
+
+        <div id='image-block'>
           <img id='image'  src='https://www.for-sale.co.uk/sh-img/1200px-Hausziege_04_goats.jpg' alt='product-img'></img>
         </div>
 
@@ -45,6 +48,7 @@ const productDetail = () => {
 
     </div>
     </div>
+    
   )
 }
 
