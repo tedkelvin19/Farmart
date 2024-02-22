@@ -1,7 +1,6 @@
 import React from "react";
 import "../cssModules/Footer.css";
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -25,4 +24,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

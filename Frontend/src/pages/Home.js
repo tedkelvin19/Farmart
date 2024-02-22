@@ -1,34 +1,19 @@
-
-import Header from "./Header";
+import "../cssModules/Home.css";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const currentYear = new Date().getFullYear();
-
 const Home = () => {
-  const myStyle = {
-    backgroundImage:
-      "url('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-    height: "80vh",
-    marginTop: "0px",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-  };
-
   const [marketData, setMarketData] = useState([]);
-  const API_URL = "http://localhost:3000/marketlisting";
+  const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
 
   useEffect(() => {
-    fetch(API_URL)
+    axios
+      .get(API_URL)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMarketData(data);
+        setMarketData(response.data);
       })
       .catch((error) => {
         console.error("There was a problem fetching the data:", error);
@@ -38,7 +23,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="hero" style={myStyle}>
+      <div className="hero bg-img">
         <p>
           Welcome...!<br></br> Here Farmers Meet Buyers No middle-men involved
         </p>
@@ -54,7 +39,6 @@ const Home = () => {
         </div>
         <div className="dev-links mt-5">
           <Link to="/animal-list">Animal List</Link>
-          <Link to="/farm-upload">Upload animal</Link>
           <Link to="/my-cart">My Cart</Link>
         </div>
       </div>
@@ -68,7 +52,7 @@ const Home = () => {
                 <div className="img-div">
                   <img
                     className="card-img card-img-top img-fluid"
-                    src={animal.image}
+                    src={animal.image_url}
                     alt={animal.category}
                   />
                 </div>
@@ -80,10 +64,11 @@ const Home = () => {
                     <strong>Breed:</strong> {animal.breed}
                   </p>
                   <p className="card-text">
-                    <strong>Productivity: </strong>{animal.productivity}
+                    <strong>Productivity: </strong>
+                    {animal.productivity}
                   </p>
                   <p className="card-text">
-                    <strong>Cost: </strong>Ksh {animal.cost}
+                    <strong>Cost: </strong>Ksh {animal.price}
                   </p>
                 </div>
               </div>

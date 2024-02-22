@@ -18,6 +18,15 @@ body {
   text-shadow: 2px 2px 0px hsl(0, 0%, 11%);
 }
 
+.bg-img {
+  background-image: url("https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  height: 80vh;
+  margin-top: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .sign-in-btn {
   background-color: #f5610d;
   color: #fff;
@@ -50,16 +59,13 @@ body {
   text-align: center;
 }
 
-
 .card-img {
   height: 200px;
   object-fit: cover;
   object-position: center;
 }
 
-
 .dev-links a {
   color: white;
   margin: 10px;
-
 }
