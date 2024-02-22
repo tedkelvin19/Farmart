@@ -6,7 +6,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Contact from "./components/Contact"
 import About from "./components/About"
-import AnimalList from "./components/AnimaList"
+import AnimalList from "./components/AnimalList"
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/animal-list" element={<AnimalList />} />
-
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
     </>

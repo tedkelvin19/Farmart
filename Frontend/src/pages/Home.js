@@ -39,7 +39,7 @@ const Home = () => {
         </div>
         <div className="dev-links mt-5">
           <Link to="/animal-list">Animal List</Link>
-          <Link to="/my-cart">My Cart</Link>
+          <Link to="/cart">My Cart</Link>
         </div>
       </div>
 

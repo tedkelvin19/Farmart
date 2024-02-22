@@ -5,7 +5,6 @@ import Footer from "../pages/Footer";
 import axios from "axios";
 
 const SignUp = () => {
-  // const [id, setId] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +23,6 @@ const SignUp = () => {
 
     try {
       const user = {
-        // id,
         username,
         email,
         password,
@@ -54,7 +52,7 @@ const SignUp = () => {
         Navigate("/sign-in");
       }, 50);
     }
-  }, [isSignedUp]);
+  }, [isSignedUp, Navigate]);
 
   return (
     <>
@@ -64,18 +62,6 @@ const SignUp = () => {
         <div className="container card mt-5 mb-5">
           <h2 className="text-center mt-3">Sign Up</h2>
           <form onSubmit={handleSubmit}>
-            {/* <div className="form-group mb-4">
-              <label htmlFor="id">id</label>
-              <input
-                type="text"
-                required
-                className="form-control"
-                id="id"
-                placeholder="Enter id"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-              />
-            </div> */}
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <input
