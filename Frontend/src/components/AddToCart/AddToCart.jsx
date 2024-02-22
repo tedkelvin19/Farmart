@@ -23,42 +23,50 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
           </div>
           {animal && (
             <div className="modal-body">
-              <img
-                src={animal.image}
-                alt={animal.category}
-                className="img-fluid mb-3"
-              />
-              <p>
-                <strong>Breed:</strong> {animal.breed}
-              </p>
-              <p>
-                <strong>Health:</strong> {animal.health}
-              </p>
-              <p>
-                <strong>Age:</strong> {animal.age}
-              </p>
-              <p>
-                <strong>Productivity:</strong> {animal.productivity}
-              </p>
-              <p>
-                <strong>Weight:</strong> {animal.Weight}
-              </p>
-              <p>
-                <strong>Cost:</strong> {animal.cost}
-              </p>
-              <p>
-                <strong>Seller:</strong> {animal.owner}
-              </p>
-              <p>
-                <strong>Contact:</strong> {animal.contact}
-              </p>
-              <p>
-                <strong>Location:</strong> {animal.location}
-              </p>
-              <p>{animal.description}</p>
+              <div className="top-columns">
+                <div className="animal-image">
+                  <img
+                    src={animal.image_url}
+                    alt={animal.category}
+                    className="img-fluid img-box"
+                  />
+                </div>
+                <div className="animal-details mx-5">
+                  <p>
+                    <strong>Breed:</strong> {animal.breed}
+                  </p>
+                  <p>
+                    <strong>Health:</strong> {animal.health}
+                  </p>
+                  <p>
+                    <strong>Age:</strong> {animal.age}
+                  </p>
+                  <p>
+                    <strong>Productivity:</strong> {animal.productivity}
+                  </p>
+                  <p>
+                    <strong>Weight:</strong> {animal.weight}
+                  </p>
+                  <p>
+                    <strong>Cost:</strong> {animal.price}
+                  </p>
+                  <p>
+                    <strong>Seller:</strong> {animal.farmer_username}
+                  </p>
+                  <p>
+                    <strong>Contact:</strong> {animal.contact}
+                  </p>
+                  <p>
+                    <strong>Location:</strong> {animal.location}
+                  </p>
+                </div>
+              </div>
+              <div className="animal-description">
+                <p>{animal.description}</p>
+              </div>
             </div>
           )}
-          <div className="modal-footer">
+          <div className="modal-footer d-flex justify-content-between">
             <button type="button" className="btn add-to-cart-btn">
               Add To Buy List
             </button>

@@ -1,5 +1,9 @@
 import React from 'react'
+<<<<<<< HEAD:Frontend/src/components/ProductDetail/productDetail.jsx
 import './productDetail.css'
+=======
+import "./ProductDetail.css"
+>>>>>>> 0efd330 (update signup/sign/in):Frontend/src/components/ProductDetail/ProductDetail.jsx
 
 const productDetail = () => {
   return (

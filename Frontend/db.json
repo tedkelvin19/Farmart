@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Poultry",
-      "image": "https://images.pexels.com/photos/62284/hahn-animal-bird-cockscomb-62284.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "image": "https://images.pexels.com/photos/878113/pexels-photo-878113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "category": "Poultry",
       "breed": "Free Range",
       "health": "Fully Vaccinated",
@@ -14,7 +14,7 @@
       "owner": "Michael Johnson",
       "contact": "michael@example.com",
       "location": "Country Farm",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum reiciendis sunt nulla deserunt, dolores earum nobis dolore cupiditate nam ab blanditiis beatae sapiente, consequuntur corporis rem, harum omnis possimus. Aspernatur cumque dignissimos autem iste repellendus, sapiente sequi non eos, perspiciatis, saepe aliquid voluptatem officiis accusamus rerum explicabo obcaecati asperiores vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum reiciendis sunt nulla deserunt, dolores earum nobis dolore cupiditate nam ab blanditiis beatae sapiente, consequuntur corporis rem, harum omnis possimus. Aspernatur cumque dignissimos autem iste repellendus, sapiente sequi non eos, perspiciatis, saepe aliquid voluptatem officiis accusamus rerum explicabo obcaecati asperiores vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum reiciendis sunt nulla deserunt, dolores earum nobis dolore cupiditate nam ab blanditiis beatae sapiente, consequuntur corporis rem, harum omnis possimus. Aspernatur cumque dignissimos autem iste repellendus, sapiente sequi non eos, perspiciatis, saepe aliquid voluptatem officiis accusamus rerum explicabo obcaecati asperiores vel?"
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum reiciendis sunt nulla deserunt, dolores earum nobis dolore cupiditate nam ab blanditiis beatae sapiente, consequuntur corporis rem, harum omnis possimus. Aspernatur cumque dignissimos autem iste repellendus, sapiente sequi non eos, perspiciatis, saepe aliquid voluptatem officiis accusamus rerum explicabo obcaecati asperiores vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum reiciendis sunt nulla deserunt, dolores earum nobis dolore cupiditate nam ab blanditiis beatae sapiente, consequuntur corporis rem, harum omnis possimus. Aspernatur cumque dignissimos autem iste repellendus, sapiente sequi non eos, perspiciatis, saepe aliquid voluptatem officiis accusamus rerum explicabo obcaecati asperiores vel?"
     },
     {
       "id": "2",

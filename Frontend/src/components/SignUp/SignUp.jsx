@@ -33,12 +33,10 @@ const SignUp = () => {
         role,
       };
 
-      let endpoint;
-      if (role === "Farmer") {
-        endpoint = "https://farm-jqcq.onrender.com/farm/farmers/";
-      } else endpoint = "https://farm-jqcq.onrender.com/farm/customers/";
-
-      const response = await axios.post(endpoint, user);
+      const response = await axios.post(
+        "https://farm-jqcq.onrender.com/farm/signup/",
+        user
+      );
 
       if (response.status === 201) {
         console.log("User signed up successfully:", response.data);
@@ -129,16 +127,12 @@ const SignUp = () => {
               />
             </div>
             <div className="form-group mt-4">
-              <label htmlFor="role">Your Role</label>
-              <select
-                className="form-control"
-                id="role"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-              >
-                <option>Buyer</option>
-                <option>Farmer</option>
-              </select>
+            <select value={role} onChange={(e) => setRole(e.target.value)}>
+                    <option value="">Select Role</option>
+                    <option value="patient">farmer</option>
+                    <option value="doctor">customer</option>
+                </select>
+
             </div>
             <div className="text-center">
               <button

@@ -1,5 +1,6 @@
 import "./SignIn.css";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,40 +9,41 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const SignIn = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  // const [role, setRole] = useState("");
   const Navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       let user = {
-        username,
+        email,
         password,
-        role,
       };
+        console.log(user)
+      const response = await axios.post(
+        "https://farm-jqcq.onrender.com/farm/login/",
+        user
+      );
 
-      let endpoint;
-      if (role == "User") {
-        endpoint = "https://farm-jqcq.onrender.com/farm/customers/";
-      } else endpoint = "https://farm-jqcq.onrender.com/farm/farmers/";
 
-      Response = axios.post(endpoint, user);
-      if (Response.status === "200") {
-        console.log("Sign in successful");
-        setIsSignedIn(true);
+      const { jwt, role } = response.data;
+      console.log(jwt)
 
-        if (role === "User") {
-          Navigate("/animal-list");
-        } else {
-          Navigate("/farm-upload");
-        }
-      } else {
-        alert("Problem signing in");
-      }
+      
+      Cookies.set('jwt', jwt)
+            window.alert("Login successful")
+            // Redirect user to corresponding dashboard based on role
+            if (role === 'patient') {
+              window.location.href = '/farm-upload';
+            } else if (role === 'admin') {
+              window.location.href = '/admin-dashboard';
+            } else if (role === 'doctor') {
+              window.location.href = '/animal-list';
+            }
     } catch (error) {
-      console.error("Error signing up:", error);
+      console.error("Error signing in:", error);
     }
   };
 
@@ -53,15 +55,15 @@ const SignIn = () => {
           <h2 className="text-center mt-3">Sign In</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="text"
                 required
                 className="form-control"
-                id="username"
-                placeholder="Enter username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                id="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group mt-4">
@@ -76,7 +78,7 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="form-group mt-4">
+            {/* <div className="form-group mt-4">
               <label htmlFor="role">Your Role</label>
               <select
                 className="form-control"
@@ -88,7 +90,7 @@ const SignIn = () => {
                 <option>Buyer</option>
                 <option>Farmer</option>
               </select>
-            </div>
+            </div> */}
             <div className="text-center">
               <button
                 type="submit"
@@ -109,3 +111,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+

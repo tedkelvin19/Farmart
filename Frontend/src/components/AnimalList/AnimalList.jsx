@@ -13,7 +13,7 @@ const AnimalList = () => {
   useEffect(() => {
     const fetchAnimals = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/marketlisting");
+        const response = await axios.get("https://farm-jqcq.onrender.com/farm/animals/");
         setAnimals(response.data);
       } catch (error) {
         console.error("Error fetching animals:", error);
@@ -45,7 +45,7 @@ const AnimalList = () => {
                 <div className="img-div">
                   <img
                     className="card-img card-img-top img-fluid"
-                    src={animal.image}
+                    src={animal.image_url}
                     alt={animal.category}
                   />
                 </div>
@@ -60,7 +60,7 @@ const AnimalList = () => {
                     <strong>Productivity:</strong> {animal.productivity}
                   </p>
                   <p className="card-text">
-                    <strong>Cost: </strong>Ksh {animal.cost}
+                    <strong>Cost: </strong>Ksh {animal.price}
                   </p>
                   <div className="card-footer">
                     <div
