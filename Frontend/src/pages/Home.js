@@ -40,6 +40,7 @@ const Home = () => {
         <div className="dev-links mt-5">
           <Link to="/animal-list">Animal List</Link>
           <Link to="/cart">My Cart</Link>
+          <Link to="/farm-upload">Upload animal</Link>
         </div>
       </div>
 

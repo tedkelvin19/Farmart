@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../pages/Header';
 import AddToCart from "../components/AddToCart"
@@ -82,6 +83,7 @@ const AnimalList = () => {
           onClose={closeModal}
           animal={selectedAnimal}
         />
+        <div className="container mb-5"><Link to="/cart">My Cart</Link></div>
         <footer>
           <div className="footer mt-auto py-3 bg-dark text-light my-footer">
             <div className="container">

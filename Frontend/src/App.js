@@ -8,6 +8,7 @@ import Contact from "./components/Contact"
 import About from "./components/About"
 import AnimalList from "./components/AnimalList"
 import Cart from "./pages/Cart";
+import FarmUpload from "./pages/FarmUpload";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/animal-list" element={<AnimalList />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/farm-upload" element={<FarmUpload />} />
         </Routes>
       </Router>
     </>
