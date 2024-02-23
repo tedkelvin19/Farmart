@@ -1,12 +1,16 @@
 import "../cssModules/Addtocart.css";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartActions";
+
 const AddToCart = ({ isOpen, onClose, animal }) => {
+  const dispatch = useDispatch();
 
-
-  const addToCart = (id) => {
-    
-   }
-
+  const handleAddToCart = (animal) => {
+    dispatch(addToCart(animal));
+    alert("Animal added to cart")
+    onClose();
+  };
 
   return (
     <div
@@ -74,7 +78,11 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
             </div>
           )}
           <div className="modal-footer d-flex justify-content-between">
-            <button onClick={() => addToCart(animal.id)} type="button" className="btn add-to-cart-btn">
+            <button
+              onClick={() => handleAddToCart(animal)}
+              type="button"
+              className="btn add-to-cart-btn"
+            >
               Add To Cart
             </button>
             <button type="button" className="btn btn-danger" onClick={onClose}>
