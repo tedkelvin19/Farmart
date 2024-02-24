@@ -77,28 +77,14 @@ const AnimalList = () => {
               </div>
             ))}
           </div>
+        <div className="container mb-5"><Link className='text-dark' to="/cart">My Cart</Link></div>
         </div>
         <AddToCart
           isOpen={isModalOpen}
           onClose={closeModal}
           animal={selectedAnimal}
         />
-        <div className="container mb-5"><Link to="/cart">My Cart</Link></div>
-        <footer>
-          <div className="footer mt-auto py-3 bg-dark text-light my-footer">
-            <div className="container">
-              <p className="text-center">
-                &copy; 2024 Farmart | All rights reserved.
-              </p>
-              <div className="text-center footer-socials">
-                Follow Us On Our Socials ||
-                <a href="www.facebook.com">Facebook</a>
-                <a href="www.twitter.com">Twitter</a>
-                <a href="www.youtube.com">Youtube</a>
-              </div>
-            </div>
-          </div>
-        </footer>
+        
       </>
     );
   };

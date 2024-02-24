@@ -9,6 +9,7 @@ import About from "./components/About"
 import AnimalList from "./components/AnimalList"
 import Cart from "./pages/Cart";
 import FarmUpload from "./pages/FarmUpload";
+import FarmOrders from "./pages/FarmOrders";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/animal-list" element={<AnimalList />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/farm-upload" element={<FarmUpload />} />
+          <Route path="/farm-orders" element={<FarmOrders />} />
         </Routes>
       </Router>
     </>

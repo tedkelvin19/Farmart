@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const currentYear = new Date().getFullYear();
 const Home = () => {
@@ -122,22 +123,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <footer>
-        <div className="footer mt-auto py-3 bg-dark text-light my-footer">
-          <div className="container">
-            <p className="text-center">
-              &copy; {currentYear} Farmart | All rights reserved.
-            </p>
-            <div className="text-center footer-socials">
-              Follow Us On Our Socials ||
-              <a href="www.facebook.com">Facebook</a>
-              <a href="www.twitter.com">Twitter</a>
-              <a href="www.youtube.com">Youtube</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

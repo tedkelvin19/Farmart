@@ -2,6 +2,7 @@ import "../cssModules/Addtocart.css";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartActions";
+import Footer from "../pages/Footer";
 
 const AddToCart = ({ isOpen, onClose, animal }) => {
   const dispatch = useDispatch();
@@ -97,6 +98,7 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
