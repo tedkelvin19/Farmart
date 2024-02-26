@@ -1,0 +1,11 @@
+.cart-div {
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-section {
+  display: flex;
+  justify-content: space-between;
+}

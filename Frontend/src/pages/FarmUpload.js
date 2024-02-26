@@ -10,7 +10,7 @@ import { jwtDecode } from "jwt-decode";
 const FarmUpload = () => {
   const [category, setCategory] = useState("");
   const [breed, setBreed] = useState("");
-  const [health, setHealth] = useState("");
+  // const [health, setHealth] = useState("");
   const [weight, setWeight] = useState("");
   const [age, setAge] = useState("");
   const [image_url, setImage_url] = useState("");
@@ -19,11 +19,11 @@ const FarmUpload = () => {
   const [farmer, setFarmer] = useState();
   // const [reproductiveHistory, setReproductiveHistory] = useState("");
 
-  useEffect(() => {
-    // Retrieve cookie value
-    const cookieValue = Cookies.get("jwt");
-    setFarmer(jwtDecode(cookieValue).id);
-  }, []);
+  // useEffect(() => {
+  //   // Retrieve cookie value
+  //   const cookieValue = Cookies.get("jwt");
+  //   setFarmer(jwtDecode(cookieValue).id);
+  // }, []);
 
   // console.log(token);
   // console.log(farmer)
@@ -55,7 +55,7 @@ const FarmUpload = () => {
             alert("Your data has been uploaded successfully");
             setCategory("");
             setBreed("");
-            setHealth("");
+            // setHealth("");
             // setReproductiveHistory("");
             setWeight("");
             setAge("");
@@ -67,23 +67,21 @@ const FarmUpload = () => {
     } catch (error) {
       console.error("Error sending data:", error);
     }
-
-   
   };
 
   return (
     <>
       <Header />
       <div className="container">
-        <div className="mt-4 bg-light pt-3 pb-2 animal-form mx-auto">
+        <div className="mt-5 bg-light pt-3 pb-2 animal-form mx-auto">
           <h5 className="text-center">
-            View, Approve or Reject Ordrers{" "}
-            <button className="btn upload-btn">
-              <Link to="/farm-orders">Here</Link>
-            </button>
+            View, Approve or Reject Ordrers 
+            <Link to="/farm-orders">
+              <button className="btn btn-success upload-btn">Here</button>
+            </Link>
           </h5>
         </div>
-        <div className="container mt-5 pt-4 bg-light animal-form">
+        <div className="container mt-5 mb-5 pt-4 bg-light animal-form">
           <h5 className="upload-heading text-center mb-4">
             Upload Animal For Sale
           </h5>

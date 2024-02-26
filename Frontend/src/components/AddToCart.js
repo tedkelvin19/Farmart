@@ -89,7 +89,7 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
               </button>
               <button
                 type="button"
-                className="btn btn-danger"
+                className="btn btn-outline-secondary"
                 onClick={onClose}
               >
                 Close

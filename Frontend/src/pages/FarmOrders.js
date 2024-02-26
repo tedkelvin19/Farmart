@@ -36,7 +36,6 @@ const FarmOrders = () => {
     <>
       <Header />
       <div className="container main-div">
-        <h2 className="mt-5 section-heading">You Have Posted {uploadedAnimals.length} Animals</h2>
         <div className="row">
           {uploadedAnimals.length === 0 ? (
             <div className="col-md-12 pb-2 pt-4 bg-light">
@@ -51,41 +50,43 @@ const FarmOrders = () => {
               </Link>
             </div>
           ) : (
-            uploadedAnimals.map((animal) => (
-              <div key={animal.id} className="col-md-12 mb-4">
-                <div className="card">
-                  <div className="row no-gutters">
-                    <div className="col-md-4">
-                      <img
-                        src={animal.image_url}
-                        className="card-img"
-                        alt="Animal"
-                      />
-                    </div>
-                    <div className="col-md-8">
+            <div className="mt-5">
+              <h2 className="section-heading">You Have Posted {animals.length} Animals</h2>
+              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mb-5">
+                {uploadedAnimals.map((animal, index) => (
+                  <div key={index} className="col">
+                    <div className="card">
+                      <div className="img-div">
+                        <img
+                          className="card-img card-img-top img-fluid"
+                          src={animal.image_url}
+                          alt={animal.category}
+                        />
+                      </div>
                       <div className="card-body">
                         <h5 className="card-title">
-                          Breed - {animal.breed}
+                          <strong>{animal.category}</strong>
                         </h5>
                         <p className="card-text">
-                          <strong>Health:</strong> {animal.health}
-                          <br />
-                          <strong>Reproductive History:</strong>{" "}
-                          {animal.reproductiveHistory}
-                          <br />
-                          <strong>Weight:</strong> {animal.weight} Kgs
-                          <br />
-                          <strong>Cost:</strong> Ksh {animal.cost}
+                          <strong>Breed:</strong> {animal.breed}
+                        </p>
+                        <p className="card-text">
+                          <strong>Productivity:</strong> {animal.productivity}
+                        </p>
+                        <p className="card-text">
+                          <strong>Cost: </strong>Ksh {animal.price}
                         </p>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))
+            </div>
           )}
         </div>
-        <h2 className="mt-5 section-heading">Your Have Received {animals.length} Orders</h2>
+        <h2 className="mt-4 section-heading">
+          Your Have Received {animals.length} Orders
+        </h2>
         <div className="row">
           {animals.length === 0 ? (
             <div className="col-md-12 pb-2 pt-4 mb-5 bg-light">
@@ -101,7 +102,8 @@ const FarmOrders = () => {
             </div>
           ) : (
             animals.map((animal) => (
-              <div key={animal.id} className="col-md-12 mb-5">
+              <div className="orders-div">
+                <div key={animal.id} className="col-md-12 mb-5">
                 <div className="card">
                   <div className="row no-gutters">
                     <div className="col-md-4">
@@ -113,9 +115,7 @@ const FarmOrders = () => {
                     </div>
                     <div className="col-md-5">
                       <div className="card-body">
-                        <h5 className="card-title">
-                          Breed - {animal.breed}
-                        </h5>
+                        <h5 className="card-title">Breed - {animal.breed}</h5>
                         <p className="card-text">
                           <strong>Health:</strong> {animal.health}
                           <br />
@@ -129,11 +129,16 @@ const FarmOrders = () => {
                       </div>
                     </div>
                     <div className="col-md-3 d-flex flex-column justify-content-between">
-                      <button className="btn btn-success mt-5 mx-4">Accept</button>
-                      <button className="btn btn-danger mb-5 mx-4">Reject</button>
+                      <button className="btn btn-success mt-5 mx-4">
+                        Accept
+                      </button>
+                      <button className="btn btn-danger mb-5 mx-4">
+                        Reject
+                      </button>
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             ))
           )}

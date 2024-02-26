@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const currentYear = new Date().getFullYear();
+// const currentYear = new Date().getFullYear();
 const Home = () => {
   const [marketData, setMarketData] = useState([]);
   const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
@@ -42,6 +42,7 @@ const Home = () => {
           <Link to="/animal-list">Animal List</Link>
           <Link to="/cart">My Cart</Link>
           <Link to="/farm-upload">Upload animal</Link>
+          <Link to="/check-out">Check Out</Link>
         </div>
       </div>
 
