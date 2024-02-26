@@ -66,7 +66,7 @@ const ContactUs = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="btn btn-primary mt-4 sign-button"
+                  className="send-btn"
                 >
                   Send
                 </button>

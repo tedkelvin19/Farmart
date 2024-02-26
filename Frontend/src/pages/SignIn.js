@@ -93,6 +93,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+      <br />
       <Footer />
     </>
   );

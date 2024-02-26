@@ -1,14 +1,12 @@
 /* Footer.css */
-.footer-wrapper {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+.footer-wrapper{
+  background-color: #404040;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
-
-.footer {
-  width: 100%;
-}
-
 .footer-socials {
   display: flex; 
   justify-content: center; 
