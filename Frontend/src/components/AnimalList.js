@@ -9,6 +9,8 @@ const AnimalList = () => {
   const [animals, setAnimals] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchBreed, setSearchBreed] = useState("");
+  const [searchParam] = useState(["breed", "category"]);
 
   useEffect(() => {
     const fetchAnimals = async () => {
@@ -32,7 +34,15 @@ const AnimalList = () => {
     setSelectedAnimal(null);
     setIsModalOpen(false);
   };
-
+const filteredAnimals = () => {
+  return animals.filter((animal)=> {
+    return searchParam.some((newAnimal)=>{
+      return (
+        animal[newAnimal].toString().toLowerCase().indexOf(searchBreed.toLowerCase()) > -1
+      )
+    })
+  })
+};
   return (
     <>
       <Header />
@@ -43,8 +53,22 @@ const AnimalList = () => {
             My Cart
           </Link>
         </div>
+        <div>
+          <form>
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control"
+                id="search"
+                placeholder="search by breed"
+                value={searchBreed}
+                onChange={(e) => setSearchBreed(e.target.value)}
+              /><br/>
+            </div>
+          </form>
+        </div>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mb-5">
-          {animals.map((animal, index) => (
+          {filteredAnimals(animals).map((animal, index) => (
             <div key={index} className="col">
               <div className="card">
                 <div className="img-div">
@@ -62,7 +86,7 @@ const AnimalList = () => {
                     <strong>Breed:</strong> {animal.breed}
                   </p>
                   <p className="card-text">
-                    <strong>Productivity:</strong> {animal.productivity}
+                    <strong>Animal age:</strong> {animal.age}
                   </p>
                   <p className="card-text">
                     <strong>Cost: </strong>Ksh {animal.price}
