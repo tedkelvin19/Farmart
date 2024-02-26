@@ -13,7 +13,7 @@ const AnimalList = () => {
   useEffect(() => {
     const fetchAnimals = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/animals");
+        const response = await axios.get("https://farm-jqcq.onrender.com/farm/animals/");
         setAnimals(response.data);
       } catch (error) {
         console.error("Error fetching animals:", error);
