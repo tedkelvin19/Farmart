@@ -2,6 +2,7 @@ import "../cssModules/Addtocart.css";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartActions";
+import Footer from "../pages/Footer";
 
 const AddToCart = ({ isOpen, onClose, animal }) => {
   const dispatch = useDispatch();
@@ -88,7 +89,7 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
               </button>
               <button
                 type="button"
-                className="btn btn-danger"
+                className="btn btn-outline-secondary"
                 onClick={onClose}
               >
                 Close
@@ -97,6 +98,7 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

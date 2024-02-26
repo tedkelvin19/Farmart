@@ -1,60 +1,100 @@
 // cart.js
-
-import React from "react";
+import "../cssModules/Cart.css"
+import React from "react"; // Undo to
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../redux/cartActions";
 import Header from "./Header";
-// import Footer from "./Footer"
+import Footer from "./Footer";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (animalId) => {
+    dispatch(removeFromCart(animalId));
+  };
 
   return (
     <>
       <Header />
-      <div className="container mt-5">
+      <div className="container main-div">
+        <h2 className="mt-5">MyCart</h2>
         {cartItems.length === 0 ? (
-          <p>Your cart is empty</p>
+          <div>
+            <div className="bg-light pt-4 pb-2 px-4">
+              <p>Your Cart Is Empty</p>
+            </div>
+            <div className="container mt-5 mb-5">
+              <Link className="text-primary" to="/animal-list">
+                <i className="bi bi-arrow-left"></i>Add Animals To Cart
+              </Link>
+            </div>
+          </div>
         ) : (
           <div>
-            <h1 className="text-center mb-4">My Cart</h1>
             <div className="row">
               {cartItems.map((item, index) => (
-                <div key={index} className="col-md-12 mb-3">
+                <div key={index} className="col-md-12 mb-4 cart-div">
                   <div className="card">
-                    <div className="row">
+                    <div className="row no-gutters">
                       <div className="col-md-4">
                         <img
                           src={item.image_url}
-                          className="card-img-top"
                           alt={item.breed}
-                          style={{ maxHeight: "200px", objectFit: "cover" }}
+                          className="card-img"
                         />
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-md-4">
                         <div className="card-body">
-                          <p className="card-text"><strong>Breed: </strong>{item.breed}</p>
-                          <p className="card-text"><strong>Weight: </strong>{item.weight}</p>
-                          <p className="card-text"><strong>Price: </strong>{item.price}</p>
-                          <p className="card-text"><strong>Seller: </strong>{item.farmer_username}</p>
+                          <div>
+                            <p>
+                              <strong>Breed: </strong>
+                              {item.breed}
+                            </p>
+                            <p>
+                              <strong>Weight: </strong>
+                              {item.weight}
+                            </p>
+                            <p>
+                              <strong>Price: </strong>
+                              Ksh {item.price}
+                            </p>
+                            <p>
+                              <strong>Seller: </strong>
+                              {item.farmer_username}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                      <div className="col-md-2 d-flex flex-column align-items-center justify-content-center">
-                        <button className="btn btn-primary mb-2"><i className="bi bi-trash"></i></button>
-                        <button className="btn btn-primary">Place Order</button>
+                      <div className="col-md-4">
+                        <div className="card-body d-flex flex-column justify-content-between">
+                          <button
+                            className="btn btn-danger mb-3 mt-4"
+                            onClick={() => handleRemoveFromCart(item.id)}
+                          >
+                            Remove From Cart
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+            <div className="container mb-5 order-section">
+              <Link className="mt-4" to="/animal-list">
+                <i className="bi bi-arrow-left"></i>Shop Some More
+              </Link>
+              <Link to="/check-out">
+                <button className="btn mt-3 sign-button text-light">Order All</button>
+              </Link>
+            </div>
           </div>
         )}
       </div>
-      <div className="container">
-        <Link to="/animal-list" className="btn btn-secondary mb-5">Back To Animals</Link>
-      </div>
-      {/* <Footer /> */}
+
+      <Footer />
     </>
   );
 };

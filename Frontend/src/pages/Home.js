@@ -3,8 +3,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
-const currentYear = new Date().getFullYear();
+// const currentYear = new Date().getFullYear();
 const Home = () => {
   const [marketData, setMarketData] = useState([]);
   const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
@@ -41,6 +42,7 @@ const Home = () => {
           <Link to="/animal-list">Animal List</Link>
           <Link to="/cart">My Cart</Link>
           <Link to="/farm-upload">Upload animal</Link>
+          <Link to="/check-out">Check Out</Link>
         </div>
       </div>
 
@@ -122,22 +124,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <footer>
-        <div className="footer mt-auto py-3 bg-dark text-light my-footer">
-          <div className="container">
-            <p className="text-center">
-              &copy; {currentYear} Farmart | All rights reserved.
-            </p>
-            <div className="text-center footer-socials">
-              Follow Us On Our Socials ||
-              <a href="www.facebook.com">Facebook</a>
-              <a href="www.twitter.com">Twitter</a>
-              <a href="www.youtube.com">Youtube</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

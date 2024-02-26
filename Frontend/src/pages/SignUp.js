@@ -144,6 +144,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-
-// use this format to do my FarmUpload component
