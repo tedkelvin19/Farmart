@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../pages/Header";
 import AddToCart from "../components/AddToCart";
+import "../cssModules/Animalist.css";
 
 const AnimalList = () => {
   const [animals, setAnimals] = useState([]);
@@ -11,7 +12,7 @@ const AnimalList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchBreed, setSearchBreed] = useState("");
   const [searchParam] = useState(["breed", "category"]);
-
+  const [ageFilter, setAgeFilter] = useState("asc");
   useEffect(() => {
     const fetchAnimals = async () => {
       try {
@@ -34,15 +35,21 @@ const AnimalList = () => {
     setSelectedAnimal(null);
     setIsModalOpen(false);
   };
-const filteredAnimals = () => {
-  return animals.filter((animal)=> {
-    return searchParam.some((newAnimal)=>{
-      return (
-        animal[newAnimal].toString().toLowerCase().indexOf(searchBreed.toLowerCase()) > -1
-      )
-    })
-  })
-};
+  const filteredAnimals = () => {
+    const filtered = animals.filter((animal)=> {
+      return searchParam.some((newAnimal)=>{
+        return (
+          animal[newAnimal].toString().toLowerCase().indexOf(searchBreed.toLowerCase()) > -1
+        )
+      })
+    });
+  
+    if (ageFilter === "asc") {
+      return filtered.sort((a, b) => a.age - b.age);
+    } else {
+      return filtered.sort((a, b) => b.age - a.age);
+    }
+  };
   return (
     <>
       <Header />
@@ -53,7 +60,8 @@ const filteredAnimals = () => {
             My Cart
           </Link>
         </div>
-        <div>
+        <div className="filter-container">
+          <div className="filterbybreed">
           <form>
             <div className="form-group">
               <input
@@ -66,6 +74,13 @@ const filteredAnimals = () => {
               /><br/>
             </div>
           </form>
+          </div>
+          <div className="filterbyage">
+          <select className="form-select" value={ageFilter} onChange={(e) => setAgeFilter(e.target.value)}>
+              <option value="asc">Age Ascending</option>
+              <option value="desc">Age Descending</option>
+          </select>
+          </div>  
         </div>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mb-5">
           {filteredAnimals(animals).map((animal, index) => (
