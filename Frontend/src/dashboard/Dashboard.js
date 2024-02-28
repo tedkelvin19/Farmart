@@ -30,7 +30,7 @@ const Dashboard = () => {
         const fetchAnimals = async () => {
             try {
                 // Make a GET request to your API endpoint to fetch animals
-                const response = await axios.get('http://127.0.0.1:8000/farm/animals_filter/', {
+                const response = await axios.get('https://farm-jqcq.onrender.com/farm/animals_filter/', {
                     headers: {
                         'Authorization': `Bearer ${cookieValue}`,
                     }

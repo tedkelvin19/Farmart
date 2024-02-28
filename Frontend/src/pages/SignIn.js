@@ -23,7 +23,7 @@ const SignIn = () => {
       };
         console.log(user)
       const response = await axios.post(
-        "http://127.0.0.1:8000/farm/login/",
+        "https://farm-jqcq.onrender.com/farm/login/",
         user
       );
 

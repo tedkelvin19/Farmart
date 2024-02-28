@@ -11,7 +11,7 @@ const Logout = () => {
             const token = Cookies.get('jwt');
             console.log('===>' + token);
             try {
-                const res = await fetch('http://127.0.0.1:8000/farm/logout/', {
+                const res = await fetch('https://farm-jqcq.onrender.com/farm/logout/', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
