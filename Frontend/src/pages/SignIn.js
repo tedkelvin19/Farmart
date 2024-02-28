@@ -50,7 +50,11 @@ const SignIn = () => {
   return (
     <>
       <Header />
+<<<<<<< HEAD
       <div className="container d-flex justify-content-center align-items-center vh-90 sign-in-form">
+=======
+      <div className="container d-flex justify-content-center align-items-center vh-90 sign-in-form kathenge">
+>>>>>>> development
         <div className="container card mt-5 mb-5">
           <h2 className="text-center mt-3">Sign In</h2>
           <form onSubmit={handleSubmit}>
@@ -93,7 +97,10 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <br />
+=======
+>>>>>>> development
       <Footer />
     </>
   );

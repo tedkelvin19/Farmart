@@ -3,6 +3,7 @@ import Header from "../pages/Header";
 import Footer from "../pages/Footer";
 
 const ContactUs = () => {
+<<<<<<< HEAD
   const handleSendMessage = () => {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -10,6 +11,8 @@ const ContactUs = () => {
 
     alert(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
   }
+=======
+>>>>>>> development
   return (
     <>
       <Header />
@@ -73,7 +76,12 @@ const ContactUs = () => {
               <div className="text-center">
                 <button
                   type="submit"
+<<<<<<< HEAD
                   className="send-btn" onClick={handleSendMessage}>
+=======
+                  className="btn btn-primary mt-4 mb-4 sign-button"
+                >
+>>>>>>> development
                   Send
                 </button>
               </div>

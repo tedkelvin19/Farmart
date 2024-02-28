@@ -1,11 +1,18 @@
 import "../cssModules/Home.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
 // const currentYear = new Date().getFullYear();
+=======
+import Footer from "./Footer";
+import Header from "./Header";
+
+const currentYear = new Date().getFullYear();
+>>>>>>> development
 const Home = () => {
   const [marketData, setMarketData] = useState([]);
   const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
@@ -23,13 +30,18 @@ const Home = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <Header />
+=======
+      <Header/>
+>>>>>>> development
       <div className="hero bg-img">
         <p>
           Welcome...!<br></br> Here Farmers Meet Buyers No middle-men involved
         </p>
         <p>Sign In To Buy or Sell</p>
 
+<<<<<<< HEAD
         <div>
           <Link to="/sign-in">
             <button className="sign-in-btn mx-4">Sign In</button>
@@ -44,6 +56,8 @@ const Home = () => {
           <Link to="/farm-upload">Upload animal</Link>
           <Link to="/check-out">Check Out</Link>
         </div>
+=======
+>>>>>>> development
       </div>
 
       <div className="container mt-5">
@@ -60,15 +74,23 @@ const Home = () => {
                   />
                 </div>
                 <div className="card-body">
+<<<<<<< HEAD
                   <h5 className="card-title">
                     <strong>{animal.category}</strong>
                   </h5>
+=======
+>>>>>>> development
                   <p className="card-text">
                     <strong>Breed:</strong> {animal.breed}
                   </p>
                   <p className="card-text">
+<<<<<<< HEAD
                     <strong>Productivity: </strong>
                     {animal.productivity}
+=======
+                    <strong>Location: </strong>
+                    {animal.location}
+>>>>>>> development
                   </p>
                   <p className="card-text">
                     <strong>Cost: </strong>Ksh {animal.price}

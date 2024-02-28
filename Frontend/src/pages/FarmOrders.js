@@ -36,9 +36,16 @@ const FarmOrders = () => {
     <>
       <Header />
       <div className="container main-div">
+<<<<<<< HEAD
         <div className="row">
           {uploadedAnimals.length === 0 ? (
             <div className="col-md-12 pb-2 pt-4 mt-5 bg-light">
+=======
+        <h2 className="mt-5 section-heading">You Have Posted {uploadedAnimals.length} Animals</h2>
+        <div className="row">
+          {uploadedAnimals.length === 0 ? (
+            <div className="col-md-12 pb-2 pt-4 bg-light">
+>>>>>>> development
               <p>No animals posted. Post an animal to sell.</p>
               <Link
                 to="/farm-upload"
@@ -50,6 +57,7 @@ const FarmOrders = () => {
               </Link>
             </div>
           ) : (
+<<<<<<< HEAD
             <div className="mt-5">
               <h2 className="section-heading text-center">
                 You Have Posted {animals.length} Animals
@@ -77,10 +85,38 @@ const FarmOrders = () => {
                         </p>
                         <p className="card-text">
                           <strong>Cost: </strong>Ksh {animal.price}
+=======
+            uploadedAnimals.map((animal) => (
+              <div key={animal.id} className="col-md-12 mb-4">
+                <div className="card">
+                  <div className="row no-gutters">
+                    <div className="col-md-4">
+                      <img
+                        src={animal.image_url}
+                        className="card-img"
+                        alt="Animal"
+                      />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          Breed - {animal.breed}
+                        </h5>
+                        <p className="card-text">
+                          <strong>Health:</strong> {animal.health}
+                          <br />
+                          <strong>Reproductive History:</strong>{" "}
+                          {animal.reproductiveHistory}
+                          <br />
+                          <strong>Weight:</strong> {animal.weight} Kgs
+                          <br />
+                          <strong>Cost:</strong> Ksh {animal.cost}
+>>>>>>> development
                         </p>
                       </div>
                     </div>
                   </div>
+<<<<<<< HEAD
                 ))}
               </div>
             </div>
@@ -89,6 +125,14 @@ const FarmOrders = () => {
         <div>
           <br />
         </div>
+=======
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+        <h2 className="mt-5 section-heading">Your Have Received {animals.length} Orders</h2>
+>>>>>>> development
         <div className="row">
           {animals.length === 0 ? (
             <div className="col-md-12 pb-2 pt-4 mb-5 bg-light">
@@ -103,6 +147,7 @@ const FarmOrders = () => {
               </Link>
             </div>
           ) : (
+<<<<<<< HEAD
             <div className="container">
               {" "}
               {/* Wrap the orders div in a container */}
@@ -160,6 +205,44 @@ const FarmOrders = () => {
                 </div>
               </div>
             </div>
+=======
+            animals.map((animal) => (
+              <div key={animal.id} className="col-md-12 mb-5">
+                <div className="card">
+                  <div className="row no-gutters">
+                    <div className="col-md-4">
+                      <img
+                        src={animal.image_url}
+                        className="card-img"
+                        alt="Animal"
+                      />
+                    </div>
+                    <div className="col-md-5">
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          Breed - {animal.breed}
+                        </h5>
+                        <p className="card-text">
+                          <strong>Health:</strong> {animal.health}
+                          <br />
+                          <strong>Reproductive History:</strong>{" "}
+                          {animal.reproductiveHistory}
+                          <br />
+                          <strong>Weight:</strong> {animal.weight} Kgs
+                          <br />
+                          <strong>Cost:</strong> Ksh {animal.cost}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-md-3 d-flex flex-column justify-content-between">
+                      <button className="btn btn-success mt-5 mx-4">Accept</button>
+                      <button className="btn btn-danger mb-5 mx-4">Reject</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+>>>>>>> development
           )}
         </div>
       </div>

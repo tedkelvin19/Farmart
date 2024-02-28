@@ -144,3 +144,9 @@ const SignUp = () => {
 };
 
 export default SignUp;
+<<<<<<< HEAD
+=======
+
+
+// use this format to do my FarmUpload component
+>>>>>>> development

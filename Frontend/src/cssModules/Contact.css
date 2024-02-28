@@ -11,6 +11,7 @@
   
   .contact-us {
     max-width: 720px;
+<<<<<<< HEAD
   }
   .send-btn{
     background-color: #f5610d;
@@ -23,4 +24,6 @@
     transition: transform 0.3s ease;
     margin-top: 10px;
     margin-bottom: 20px;
+=======
+>>>>>>> development
   }
