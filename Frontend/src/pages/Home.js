@@ -1,27 +1,15 @@
 import "../cssModules/Home.css";
-import axios from "axios";
-import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import AboutHome from "../components/AboutHome";
 import Work from "../components/Work";
+import { useFetchAllproductsQuery } from "../features/animalsApi";
 
-const currentYear = new Date().getFullYear();
+
 const Home = () => {
-  const [marketData, setMarketData] = useState([]);
-  const API_URL = "http://127.0.0.1:8000/farm/animals/";
+  const { data: products, isLoading, isError } = useFetchAllproductsQuery() || {};
 
-  useEffect(() => {
-    axios
-      .get(API_URL)
-      .then((response) => {
-        setMarketData(response.data);
-      })
-      .catch((error) => {
-        console.error("There was a problem fetching the data:", error);
-      });
-  }, []);
-
+  
   return (
     <>
       <Header/>
@@ -36,7 +24,7 @@ const Home = () => {
       <div className="container mt-5">
         <h2 className="mb-4 heading-2">Samples From Our Market</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
-          {marketData.map((animal, index) => (
+          {products?.map((animal, index) => (
             <div key={index} className="col">
               <div className="card">
                 <div className="img-div">
