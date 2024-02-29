@@ -23,23 +23,23 @@ const SignIn = () => {
       };
         console.log(user)
       const response = await axios.post(
-        "https://farm-jqcq.onrender.com/farm/login/",
+        "http://127.0.0.1:8000/farm/login/",
         user
       );
 
 
-      const { jwt, role } = response.data;
-      console.log(jwt)
+      const { access, role } = response.data;
+      console.log(access)
 
       
-      Cookies.set('jwt', jwt)
+      Cookies.set('access', access)
             window.alert("Login successful")
             // Redirect user to corresponding dashboard based on role
-            if (role === 'patient') {
+            if (role === 'farmer') {
               window.location.href = '/farm-upload';
             } else if (role === 'admin') {
               window.location.href = '/admin-dashboard';
-            } else if (role === 'doctor') {
+            } else if (role === 'customer') {
               window.location.href = '/animal-list';
             }
     } catch (error) {

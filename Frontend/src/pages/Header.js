@@ -7,16 +7,16 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
-  const token = Cookies.get("jwt");
+  const token = Cookies.get("access");
   const { cartItems } = useSelector((state) => state?.carts);
   
 
   const handleClick = () => {
     // Remove the JWT token cookie
-    Cookies.remove("jwt");
+    Cookies.remove("access");
 
     // Check if the cookie is successfully removed
-    if (!Cookies.get("jwt")) {
+    if (!Cookies.get("access")) {
       // Navigate to the home route
       navigate("/");
     }

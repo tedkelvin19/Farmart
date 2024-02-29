@@ -3,11 +3,13 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import AboutHome from "../components/AboutHome";
+import Work from "../components/Work";
 
 const currentYear = new Date().getFullYear();
 const Home = () => {
   const [marketData, setMarketData] = useState([]);
-  const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
+  const API_URL = "http://127.0.0.1:8000/farm/animals/";
 
   useEffect(() => {
     axios
@@ -61,6 +63,8 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <AboutHome/>
+      <Work/>
       <div className="bg-dark">
         <div className="container testimonial-section bg-dark">
           <div className="mt-5 mb-5">

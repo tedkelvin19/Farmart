@@ -2,7 +2,7 @@ import "../cssModules/Contact.css";
 import Header from "../pages/Header";
 import Footer from "../pages/Footer";
 
-const ContactUs = () => {
+const Contact = () => {
   return (
     <>
       <Header />
@@ -80,4 +80,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;

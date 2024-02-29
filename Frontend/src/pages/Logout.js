@@ -8,10 +8,10 @@ const Logout = () => {
 
     useEffect(() => {
         const adminLogout = async () => {
-            const token = Cookies.get('jwt');
+            const token = Cookies.get('access');
             console.log('===>' + token);
             try {
-                const res = await fetch('https://farm-jqcq.onrender.com/farm/logout/', {
+                const res = await fetch('http://127.0.0.1:8000/farm/logout/', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ const Logout = () => {
                 const data = await res.json();
                 if (res.status === 201) {
                     setShow(true);
-                    await Cookies.remove('jwt');;
+                    await Cookies.remove('access');;
                     window.alert('Successfully Logout');
                     navigate('/sign-in', { replace: true });
                     window.location.reload();
@@ -37,7 +37,7 @@ const Logout = () => {
         const handleLogout = async () => {
             if (confirmBox === true) {
                 await adminLogout();
-                Cookies.remove('jwt');;
+                Cookies.remove('access');;
                 navigate('/', { replace: true });
             } else {
                 navigate('/');

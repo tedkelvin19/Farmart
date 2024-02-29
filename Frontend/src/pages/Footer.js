@@ -1,25 +1,47 @@
 import React from "react";
-import "../cssModules/Footer.css";
+import Logo from "../assets/Logo.svg";
+import { BsTwitter } from "react-icons/bs";
+import { SiLinkedin } from "react-icons/si";
+import { BsYoutube } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer>
-      <div className="footer mt-auto py-3 bg-dark text-light my-footer">
-        <div className="container">
-          <p className="text-center">
-            &copy; {currentYear} Farmart | All rights reserved.
-          </p>
-          <div className="text-center footer-socials">
-            Follow Us On Our Socials ||
-            <a href="https://www.facebook.com">Facebook</a>
-            <a href="https://www.twitter.com">Twitter</a>
-            <a href="https://www.youtube.com">YouTube</a>
-          </div>
+    <div className="container">
+    <div className="footer-wrapper">
+      <div className="footer-section-one">
+        <div className="footer-logo-container">
+          <h2 className="text-warning">Farmat</h2>
+        </div>
+        <div className="footer-icons">
+          <BsTwitter />
+          <SiLinkedin />
+          <BsYoutube />
+          <FaFacebookF />
         </div>
       </div>
-    </footer>
+      <div className="footer-section-two">
+        <div className="footer-section-columns">
+          <span>Qualtiy</span>
+          <span>Help</span>
+          <span>Share</span>
+          <span>Carrers</span>
+          <span>Testimonials</span>
+          <span>Work</span>
+        </div>
+        <div className="footer-section-columns">
+          <span>244-5333-7783</span>
+          <span>hello@food.com</span>
+          <span>press@food.com</span>
+          <span>contact@food.com</span>
+        </div>
+        <div className="footer-section-columns">
+          <span>Terms & Conditions</span>
+          <span>Privacy Policy</span>
+        </div>
+      </div>
+    </div>
+    </div>
   );
 };
 

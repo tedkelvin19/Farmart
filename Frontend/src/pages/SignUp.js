@@ -30,7 +30,7 @@ const SignUp = () => {
       };
 
       const response = await axios.post(
-        "https://farm-jqcq.onrender.com/farm/signup/",
+        "http://127.0.0.1:8000/farm/signup/",
         user
       );
 
@@ -119,8 +119,8 @@ const SignUp = () => {
                 onChange={(e) => setRole(e.target.value)}
               >
                 <option value="">Select Role</option>
-                <option value="patient">Farmer</option>{" "}
-                <option value="doctor">Customer</option>{" "}
+                <option value="farmer">Farmer</option>{" "}
+                <option value="customer">Customer</option>{" "}
               </select>
             </div>
 

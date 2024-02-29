@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 import { useCreateProductsMutation } from '../features/animalsApi';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
 
@@ -21,30 +22,55 @@ const Dashboard = () => {
     const [description, setDescription] = useState("");
     const [farmer, setFarmer] = useState();
     const [animals, setAnimals] = useState([]);
+    const [name, setName] = useState(null);
+    const [orders, setOrders] = useState([]);
+    const [animalId, setAnimalId] = useState('');
 
         useEffect(() => {
         // Retrieve cookie value
-        const cookieValue = Cookies.get("jwt");
+        const cookieValue = Cookies.get("access");
         setFarmer(jwtDecode(cookieValue).id);
-
+        setName(jwtDecode(cookieValue).name)
         const fetchAnimals = async () => {
-            try {
-                // Make a GET request to your API endpoint to fetch animals
-                const response = await axios.get('https://farm-jqcq.onrender.com/farm/animals_filter/', {
-                    headers: {
-                        'Authorization': `Bearer ${cookieValue}`,
-                    }
-                }); // Replace '/api/animals' with your actual API endpoint
-                setAnimals(response.data);
-            } catch (error) {
-                console.error('Error fetching animals:', error);
-            }
-        };
+          try {
+              // Make a GET request to your API endpoint to fetch animals
+              const response = await axios.get('http://127.0.0.1:8000/farm/list/', {
+                headers: {
+                  Authorization: `Bearer ${cookieValue}`
+                }
+              }); 
+              
+              setAnimals(response.data);
+              // Map the response data to return only the animal IDs
+              const animalIds = response.data.map(animal => animal.id);
+              setAnimalId(animalIds)
+          } catch (error) {
+              console.error('Error fetching animals:', error);
+          }
+      };
 
-        fetchAnimals();
+      fetchAnimals();
+      fetchOrders();
+       
       }, []);
 
-      console.log(animals)
+      const fetchOrders = async () => {
+        try {
+            // Make a GET request to your API endpoint to fetch animals
+            const response = await axios.get('http://127.0.0.1:8000/farm/orders/',); 
+            setOrders(response.data);
+            // console.log(response.data);
+        } catch (error) {
+            console.error('Error fetching animals:', error);
+        }
+    };
+
+  //  if (orders === anima)
+  // let filteredAnimals = animals.filter(animal => animal.id === orders);
+    
+  // Print the filtered animals
+  // filteredAnimals.forEach(animal => console.log(animal.breed));
+      // console.log(animals)
 
 
       const handleSubmit = async(e) => {
@@ -83,7 +109,7 @@ const Dashboard = () => {
         <SideBar/>
         <main role="main" className="container">
             <div className="p-1">
-                <h3>Welcome</h3>
+                <h3>Welcome {name}</h3>
                 <p>Upload Animal or view your Orders Here.</p>
             </div>
         <div className="row">
@@ -128,9 +154,9 @@ const Dashboard = () => {
                 <div className="col-12">
                 <select className="form-select mb-3" name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                       <option >Category</option>
-                      <option value="2">Cattle</option>
-                      <option value="3">Swine</option>
-                      <option value="1">Poultry</option>
+                      <option value="1">Cattle</option>
+                      <option value="2">Swine</option>
+                      <option value="3">Poultry</option>
                       <option value="4">Sheep</option>
                 </select>
                 </div>
@@ -145,23 +171,41 @@ const Dashboard = () => {
             </form>
           </div>
           <div className="col-md-5 ">
-            <div className="content-section m-2">
-              <h3>My Orders</h3>
-              <p className='text-muted'>Shows orders received.
+          <div className="content-section m-2">
+            <h3>My Orders</h3>
+            <p className='text-muted'>Shows orders received.
                 <ul className="list-group">
-                  <li className="list-group-item list-group-item-light">Latest Posts</li>
-                  <li className="list-group-item list-group-item-light">Announcements</li>
-                  <li className="list-group-item list-group-item-light">Calendars</li>
-                  <li className="list-group-item list-group-item-light">etc</li>
+                    {orders.map(order => {
+                        // Check if order.animal is included in animalIds array
+                        if (animalId.includes(order.animal)) {
+                            return (
+                                <li key={order.id} className="list-group-item list-group-item-light fw-light fs-3">
+                                    Order id: {order.id}
+                                    <div className="row mt-1">
+                                      <div className="col">
+                                      <Link className="btn btn-outline-warning"  type="button">confirm</Link>
+                                      </div>
+                                      <div className="col">
+                                      <Link className="btn btn-danger"  type="button">reject</Link>
+                                      </div>
+                                    </div>
+                                </li>
+                            );
+                        }
+                        return null; // Skip rendering if order is not related to any animal in animalIds
+                    })}
                 </ul>
-              </p>
-            </div>
+            </p>
+          </div>
+
             <div className="content-section m-2">
               <h3>Animal Posted</h3>
               <p className='text-muted'>Shows animals posted.
                 <ul className="list-group">
                 {animals.map(animal => (
-                    <li key={animal.id} className="list-group-item list-group-item-light">{animal.breed}</li>
+                    <li key={animal.id} className="list-group-item list-group-item-light fs-3">{animal.breed}
+                    <Link className="btn btn-primary btn-sm ml-2" to={`/${animal.id}`} >View Details</Link>
+                    </li>
                 ))}
                 </ul>
               </p>

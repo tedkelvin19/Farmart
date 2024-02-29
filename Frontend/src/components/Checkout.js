@@ -22,19 +22,26 @@ const Checkout = () => {
   let animal = String(txt[0].product.id);
   let quantity = String(txt[0].qty);
   const amount = Math.round(price);
-
+  
+  // console.log({nesh: [city,street,phoneNumber,user,animal,total_price,address]})
   const postCart = async () => {
    
-    fetch("http://127.0.0.1:8000/farm/cart/", {
+    let  paid_amount= total_price;
+    let contact_number= phoneNumber;
+
+    fetch("http://127.0.0.1:8000/farm/orders/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         animal,
-        quantity,
+        paid_amount,
         user,
-        total_price,
+        contact_number,
+        street,
+        city,
+        address,
       }),
     })
       .then((response) => response.json())
@@ -45,9 +52,10 @@ const Checkout = () => {
 
   useEffect(() => {
     // Retrieve cookie value
-    const cookieValue = Cookies.get("jwt");
-    setUser(jwtDecode(cookieValue).id);
+    const cookieValue = Cookies.get("access");
+    setUser(jwtDecode(cookieValue).user_id);
   }, []);
+// console.log(user)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -135,10 +143,10 @@ const Checkout = () => {
             </div>
 
             <div className="col-12">
-              <div className="btn btn-primary mb-3" onClick={handleSubmit}>
+              <button className="btn btn-primary mb-2" onClick={handleSubmit}>
                 <span className="ps-3">Pay ({price})</span>
                 <span className="fas fa-arrow-right"></span>
-              </div>
+              </button>
             </div>
           </div>
         </div>

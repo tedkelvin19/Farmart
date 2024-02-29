@@ -32,14 +32,11 @@ const OrderItems = () => {
                 <div className="cart-product">
                   <img src={cartItem?.product?.image_url} alt={cartItem.name} />
                   <div>
-                    <h3>{cartItem?.product?.breed}</h3>
+                    <h3 className='p-3'>{cartItem?.product?.breed}</h3>
                   </div>
                 </div>
                 
-                <div className="cart-product-quantity">
-                  <div className="count">1</div>
-                  <button></button>
-                </div>
+               
                 <div className="cart-product-total-price">
                   ${cartItem?.product?.price * cartItem.qty}
                 </div>

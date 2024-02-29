@@ -99,8 +99,8 @@ const FarmUpload = () => {
                       onChange={(e) => setCategory(e.target.value)}
                     >
                       <option value="">Category</option>
-                      <option value="2">Cattle</option>
-                      <option value="3">Swine</option>
+                      <option value="3">Cattle</option>
+                      <option value="2">Swine</option>
                       <option value="1">Poultry</option>
                       {/* <option value="">Sheep & Goats</option> */}
                     </select>

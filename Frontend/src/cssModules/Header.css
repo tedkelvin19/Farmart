@@ -46,3 +46,8 @@
   .navbar-links a:hover {
     background-color: #f5610d;
   }
+
+  .about{
+    height: 79vh;
+    /* border: 2px solid red; */
+  }

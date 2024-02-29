@@ -7,7 +7,7 @@ const SideBar = () => {
 
   const handleClick = () => {
     console.log('Hello')
-    Cookies.remove('jwt')
+    Cookies.remove('access')
   }
 
   return (

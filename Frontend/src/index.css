@@ -87,3 +87,11 @@ div.title {
   margin: 20px;
   margin-bottom: 30px;
 }
+
+.dunyu{
+ 
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh;
+}
