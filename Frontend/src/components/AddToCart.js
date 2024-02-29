@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import "../cssModules/Addtocart.css";
 
 import { useDispatch } from "react-redux";
@@ -105,14 +104,3 @@ const AddToCart = ({ isOpen, onClose, animal }) => {
 };
 
 export default AddToCart;
-=======
-import React from 'react';
-
-const AddToCart = () => {
-  return (
-    <div>AddToCart</div>
-  )
-}
-
-export default AddToCart
->>>>>>> development
