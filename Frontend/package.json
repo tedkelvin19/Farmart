@@ -57,6 +57,7 @@
     "@babel/core": "^7.24.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.24.0",
+    "axios-mock-adapter": "^1.22.0",
     "jest": "^27.5.1"
   }
 }
