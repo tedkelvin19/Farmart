@@ -14,6 +14,7 @@ const FarmUpload = () => {
   const [image_url, setImage_url] = useState("");
   const [cost, setCost] = useState("");
   const [description, setDescription] = useState("");
+  const [farmer, setFarmer] = useState(null);
   // const [reproductiveHistory, setReproductiveHistory] = useState("");
 
   // useEffect(() => {
@@ -39,7 +40,7 @@ const FarmUpload = () => {
       image_url,
       cost,
       description,
-      farmer,
+      // farmer,
     };
     console.log(animal);
     try {
