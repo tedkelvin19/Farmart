@@ -45,7 +45,7 @@ const FarmUpload = () => {
     console.log(animal);
     try {
       axios
-        .post("https://farm-jqcq.onrender.com/farm/animals/", animal)
+        .post("https://farmart-production.up.railway.app/farm/animals/", animal)
         .then((response) => {
           console.log("Data sent successfully with status", response.status);
           // clear fields if upload is successsful

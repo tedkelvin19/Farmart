@@ -8,7 +8,7 @@ import Footer from "./Footer";
 // const currentYear = new Date().getFullYear();
 const Home = () => {
   const [marketData, setMarketData] = useState([]);
-  const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
+  const API_URL = "https://farmart-production.up.railway.app/farm/animals/";
 
   useEffect(() => {
     axios

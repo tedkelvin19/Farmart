@@ -34,7 +34,7 @@ const Dashboard = () => {
         const fetchAnimals = async () => {
           try {
               // Make a GET request to your API endpoint to fetch animals
-              const response = await axios.get('http://127.0.0.1:8000/farm/list/', {
+              const response = await axios.get('https://farmart-production.up.railway.app/farm/list/', {
                 headers: {
                   Authorization: `Bearer ${cookieValue}`
                 }
@@ -57,7 +57,7 @@ const Dashboard = () => {
       const fetchOrders = async () => {
         try {
             // Make a GET request to your API endpoint to fetch animals
-            const response = await axios.get('http://127.0.0.1:8000/farm/orders/',); 
+            const response = await axios.get('https://farmart-production.up.railway.app/farm/orders/',); 
             setOrders(response.data);
             // console.log(response.data);
         } catch (error) {

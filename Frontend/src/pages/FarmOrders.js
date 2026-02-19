@@ -12,7 +12,7 @@ const FarmOrders = () => {
   useEffect(() => {
     // Fetch uploaded animals
     axios
-      .get("http://localhost:8000/animals")
+      .get("https://farmart-production.up.railway.app/animals")
       .then((response) => {
         setUploadedAnimals(response.data);
         console.log("Uploaded animals fetched successfully", uploadedAnimals);
@@ -23,7 +23,7 @@ const FarmOrders = () => {
 
     // Fetch data for animals
     axios
-      .get("http://localhost:8000/animals")
+      .get("https://farmart-production.up.railway.app/animals")
       .then((response) => {
         setAnimals(response.data);
       })

@@ -23,7 +23,7 @@ const SignIn = () => {
       };
         console.log(user)
       const response = await axios.post(
-        "https://farm-jqcq.onrender.com/farm/login/",
+        "https://farmart-production.up.railway.app/farm/login/",
         user
       );
 

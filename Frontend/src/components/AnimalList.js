@@ -16,7 +16,7 @@ const AnimalList = () => {
   useEffect(() => {
     const fetchAnimals = async () => {
       try {
-        const response = await axios.get("https://farm-jqcq.onrender.com/farm/animals/");
+        const response = await axios.get("https://farmart-production.up.railway.app/farm/animals/");
         setAnimals(response.data);
       } catch (error) {
         console.error("Error fetching animals:", error);

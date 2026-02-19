@@ -30,7 +30,7 @@ const SignUp = () => {
       };
 
       const response = await axios.post(
-        "https://farm-jqcq.onrender.com/farm/signup/",
+        "https://farmart-production.up.railway.app/farm/signup/",
         user
       );
 

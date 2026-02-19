@@ -18,7 +18,7 @@ const Patch = () => {
     const {id} = useParams();
     
     const getSingleAnimal = async() => {
-        const data = await axios.get(`http://127.0.0.1:8000/farm/animals/${id}/`)
+        const data = await axios.get(`https://farmart-production.up.railway.app/farm/animals/${id}/`)
         // console.log(data.data)
         setProduct(data.data)
         setCategory(data.data.category)
@@ -52,7 +52,7 @@ const Patch = () => {
       formField.append('quantity', quantity)
       formField.append('description', description)
 
-      await axios.patch(`http://127.0.0.1:8000/farm/update/${id}/`, formField) 
+      await axios.patch(`https://farmart-production.up.railway.app/farm/update/${id}/`, formField) 
         .then( res => {
             console.log(res.data)
             navigate('/farm-upload')

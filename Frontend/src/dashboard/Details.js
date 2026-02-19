@@ -8,7 +8,7 @@ const Details = () => {
     const {id} = useParams();
 
     const getSingleAnimal = async() => {
-        const data = await axios.get(`http://127.0.0.1:8000/farm/animals/${id}/`)
+        const data = await axios.get(`https://farmart-production.up.railway.app/farm/animals/${id}/`)
         // console.log(data.data)
         setAnimal(data.data)
     }
