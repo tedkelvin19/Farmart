@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../cssModules/FarmUpload.css";
-import Cookies from "js-cookie";
-import { jwtDecode } from "jwt-decode";
 
 const FarmUpload = () => {
   const [category, setCategory] = useState("");
@@ -16,7 +13,6 @@ const FarmUpload = () => {
   const [image_url, setImage_url] = useState("");
   const [cost, setCost] = useState("");
   const [description, setDescription] = useState("");
-  const [farmer, setFarmer] = useState();
   // const [reproductiveHistory, setReproductiveHistory] = useState("");
 
   // useEffect(() => {

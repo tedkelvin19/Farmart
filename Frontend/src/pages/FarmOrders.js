@@ -30,7 +30,7 @@ const FarmOrders = () => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []);
+  }, [uploadedAnimals]);
 
   return (
     <>
