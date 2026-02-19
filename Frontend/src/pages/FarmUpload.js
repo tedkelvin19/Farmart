@@ -72,7 +72,7 @@ const FarmUpload = () => {
           }
         });
     } catch (error) {
-      console.error("Error sending data:", error);
+      console.error("Error:", error.response.data);
     }
   };
 
