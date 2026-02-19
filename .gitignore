@@ -1,0 +1,17 @@
+# Python
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Node
+node_modules/
+build/
+
+# Mac
+.DS_Store
+
+# Vercel
+.vercel
