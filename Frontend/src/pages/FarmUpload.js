@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 import Header from "./Header";
 import Footer from "./Footer";
 import axios from "axios";
@@ -15,6 +17,13 @@ const FarmUpload = () => {
   const [cost, setCost] = useState("");
   const [description, setDescription] = useState("");
   const [farmer, setFarmer] = useState(null);
+
+  useEffect(() => {
+    const cookieValue = Cookies.get("jwt");
+    if (cookieValue) {
+      setFarmer(jwtDecode(cookieValue).id);
+    }
+  }, []);
   // const [reproductiveHistory, setReproductiveHistory] = useState("");
 
   // useEffect(() => {
