@@ -28,11 +28,11 @@ const SignIn = () => {
       );
 
 
-      const { jwt, role } = response.data;
-      console.log(jwt)
+      const { access, role } = response.data;
+      console.log(access)
 
       
-      Cookies.set('jwt', jwt)
+      Cookies.set('jwt', access)
             window.alert("Login successful")
             // Redirect user to corresponding dashboard based on role
             if (role === 'patient') {
