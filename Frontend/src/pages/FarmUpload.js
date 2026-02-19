@@ -19,7 +19,7 @@ const FarmUpload = () => {
   const [farmer, setFarmer] = useState(null);
 
   useEffect(() => {
-    const cookieValue = Cookies.get("jwt");
+    const cookieValue = localStorage.getItem('jwt');
     if (cookieValue) {
       setFarmer(jwtDecode(cookieValue).id);
     }
@@ -28,7 +28,7 @@ const FarmUpload = () => {
 
   // useEffect(() => {
   //   // Retrieve cookie value
-  //   const cookieValue = Cookies.get("jwt");
+  //   const cookieValue = localStorage.getItem('jwt');
   //   setFarmer(jwtDecode(cookieValue).id);
   // }, []);
 
@@ -51,6 +51,8 @@ const FarmUpload = () => {
       description,
       // farmer,
     };
+    console.log("farmer ID:", farmer);
+    console.log("farmer ID:", farmer);
     console.log(animal);
     try {
       axios

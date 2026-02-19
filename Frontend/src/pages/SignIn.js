@@ -32,7 +32,7 @@ const SignIn = () => {
       console.log(access)
 
       
-      Cookies.set('jwt', access)
+      localStorage.setItem('jwt', access)
             window.alert("Login successful")
             // Redirect user to corresponding dashboard based on role
             if (role === 'patient') {
