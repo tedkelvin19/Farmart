@@ -12,3 +12,15 @@
   .contact-us {
     max-width: 720px;
   }
+  .send-btn{
+    background-color: #f5610d;
+    border: none;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }

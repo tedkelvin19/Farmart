@@ -1,30 +1,55 @@
 import "../cssModules/Home.css";
-import Footer from "./Footer";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "./Header";
-import AboutHome from "../components/AboutHome";
-import Work from "../components/Work";
-import { useFetchAllproductsQuery } from "../features/animalsApi";
+import Footer from "./Footer";
 
-
+// const currentYear = new Date().getFullYear();
 const Home = () => {
-  const { data: products, isLoading, isError } = useFetchAllproductsQuery() || {};
+  const [marketData, setMarketData] = useState([]);
+  const API_URL = "https://farm-jqcq.onrender.com/farm/animals/";
 
-  
+  useEffect(() => {
+    axios
+      .get(API_URL)
+      .then((response) => {
+        setMarketData(response.data);
+      })
+      .catch((error) => {
+        console.error("There was a problem fetching the data:", error);
+      });
+  }, []);
+
   return (
     <>
-      <Header/>
+      <Header />
       <div className="hero bg-img">
         <p>
           Welcome...!<br></br> Here Farmers Meet Buyers No middle-men involved
         </p>
         <p>Sign In To Buy or Sell</p>
 
+        <div>
+          <Link to="/sign-in">
+            <button className="sign-in-btn mx-4">Sign In</button>
+          </Link>
+          <Link to="/sign-up">
+            <button className="sign-in-btn mx-4">Sign Up</button>
+          </Link>
+        </div>
+        <div className="dev-links mt-5">
+          <Link to="/animal-list">Animal List</Link>
+          <Link to="/cart">My Cart</Link>
+          <Link to="/farm-upload">Upload animal</Link>
+          <Link to="/check-out">Check Out</Link>
+        </div>
       </div>
 
       <div className="container mt-5">
         <h2 className="mb-4 heading-2">Samples From Our Market</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
-          {products?.map((animal, index) => (
+          {marketData.map((animal, index) => (
             <div key={index} className="col">
               <div className="card">
                 <div className="img-div">
@@ -35,12 +60,15 @@ const Home = () => {
                   />
                 </div>
                 <div className="card-body">
+                  <h5 className="card-title">
+                    <strong>{animal.category}</strong>
+                  </h5>
                   <p className="card-text">
                     <strong>Breed:</strong> {animal.breed}
                   </p>
                   <p className="card-text">
-                    <strong>Location: </strong>
-                    {animal.location}
+                    <strong>Productivity: </strong>
+                    {animal.productivity}
                   </p>
                   <p className="card-text">
                     <strong>Cost: </strong>Ksh {animal.price}
@@ -51,8 +79,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <AboutHome/>
-      <Work/>
       <div className="bg-dark">
         <div className="container testimonial-section bg-dark">
           <div className="mt-5 mb-5">

@@ -2,7 +2,14 @@ import "../cssModules/Contact.css";
 import Header from "../pages/Header";
 import Footer from "../pages/Footer";
 
-const Contact = () => {
+const ContactUs = () => {
+  const handleSendMessage = () => {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    alert(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+  }
   return (
     <>
       <Header />
@@ -66,8 +73,7 @@ const Contact = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="btn btn-primary mt-4 mb-4 sign-button"
-                >
+                  className="send-btn" onClick={handleSendMessage}>
                   Send
                 </button>
               </div>
@@ -80,4 +86,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

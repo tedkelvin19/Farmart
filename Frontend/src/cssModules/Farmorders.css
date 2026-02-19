@@ -1,7 +1,11 @@
 .main-div {
-  max-width: 700px;
+  margin: 0 auto;
 }
 
 .section-heading {
   color: #f5610d;
+}
+
+.orders-div {
+  max-width: 700px;
 }

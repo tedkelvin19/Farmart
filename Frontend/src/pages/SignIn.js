@@ -23,23 +23,23 @@ const SignIn = () => {
       };
         console.log(user)
       const response = await axios.post(
-        "http://127.0.0.1:8000/farm/login/",
+        "https://farm-jqcq.onrender.com/farm/login/",
         user
       );
 
 
-      const { access, role } = response.data;
-      console.log(access)
+      const { jwt, role } = response.data;
+      console.log(jwt)
 
       
-      Cookies.set('access', access)
+      Cookies.set('jwt', jwt)
             window.alert("Login successful")
             // Redirect user to corresponding dashboard based on role
-            if (role === 'farmer') {
+            if (role === 'patient') {
               window.location.href = '/farm-upload';
             } else if (role === 'admin') {
               window.location.href = '/admin-dashboard';
-            } else if (role === 'customer') {
+            } else if (role === 'doctor') {
               window.location.href = '/animal-list';
             }
     } catch (error) {
@@ -50,7 +50,7 @@ const SignIn = () => {
   return (
     <>
       <Header />
-      <div className="container d-flex justify-content-center align-items-center vh-90 sign-in-form kathenge">
+      <div className="container d-flex justify-content-center align-items-center vh-90 sign-in-form">
         <div className="container card mt-5 mb-5">
           <h2 className="text-center mt-3">Sign In</h2>
           <form onSubmit={handleSubmit}>
@@ -93,6 +93,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+      <br />
       <Footer />
     </>
   );

@@ -4,7 +4,7 @@ import Footer from "../pages/Footer";
 
 const About = () => {
   return (
-    <div className="about-header">
+    <>
       <Header />
       <div className="container about">
         <div className="row mt-5">
@@ -25,7 +25,7 @@ const About = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
